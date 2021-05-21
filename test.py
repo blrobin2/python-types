@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from app import get_full_name, \
     get_name_with_age, \
     get_items, \
@@ -6,7 +8,8 @@ from app import get_full_name, \
     process_prices, \
     say_hi, \
     Person, \
-    get_person_name \
+    get_person_name, \
+    User
 
 
 def test_full_name():
@@ -48,3 +51,16 @@ def test_say_hi(capsys):
 def test_get_person_name():
     person = Person(name="John")
     assert get_person_name(person) == "John"
+
+
+def test_user():
+    external_data = dict(
+        id='123',
+        signup_ts='2017-06-01 12:22',
+        friends=[1, '2', b'3']
+    )
+    user = User(**external_data)
+    assert user.id == 123
+    assert user.name == 'John Doe'
+    assert user.signup_ts == datetime(2017, 6, 1, 12, 22)
+    assert user.friends == [1, 2, 3]

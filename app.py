@@ -1,3 +1,5 @@
+from pydantic import BaseModel
+from datetime import datetime
 from typing import Dict, List, Optional, Set, Tuple
 
 
@@ -47,3 +49,10 @@ class Person:
 
 def get_person_name(one_person: Person) -> str:
     return one_person.name
+
+
+class User(BaseModel):
+    id: int
+    name = "John Doe"
+    signup_ts: Optional[datetime] = None
+    friends: List[int] = []
