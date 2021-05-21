@@ -1,4 +1,4 @@
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Optional, Set, Tuple
 
 
 def get_full_name(first_name: str, last_name: str):
@@ -31,3 +31,10 @@ def process_items2(items_t: Tuple[int, int, str], items_s: Set[bytes]):
 def process_prices(prices: Dict[str, float]):
     for item_name, item_price in prices.items():
         print(item_name, ":", item_price)
+
+
+def say_hi(name: Optional[str] = None):
+    if name is not None:
+        print(f"Hey {name.title()}!")
+    else:
+        print("Hello World!")

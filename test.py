@@ -3,7 +3,8 @@ from app import get_full_name, \
     get_items, \
     process_items, \
     process_items2, \
-    process_prices
+    process_prices, \
+    say_hi
 
 
 def test_full_name():
@@ -33,3 +34,10 @@ def test_process_prices(capsys):
     process_prices(dict(apple=2.0, pear=4.3))
     captured = capsys.readouterr()
     assert captured.out == "apple : 2.0\npear : 4.3\n"
+
+
+def test_say_hi(capsys):
+    say_hi("jeff")
+    say_hi()
+    captured = capsys.readouterr()
+    assert captured.out == "Hey Jeff!\nHello World!\n"
