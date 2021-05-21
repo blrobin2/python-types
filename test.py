@@ -2,7 +2,8 @@ from app import get_full_name, \
     get_name_with_age, \
     get_items, \
     process_items, \
-    process_items2
+    process_items2, \
+    process_prices
 
 
 def test_full_name():
@@ -26,3 +27,9 @@ def test_process_items(capsys):
 def test_process_items2():
     items = process_items2((1, 2, 'three'), {b'101', b'202'})
     assert items == ((1, 2, 'three'), {b'101', b'202'})
+
+
+def test_process_prices(capsys):
+    process_prices(dict(apple=2.0, pear=4.3))
+    captured = capsys.readouterr()
+    assert captured.out == "apple : 2.0\npear : 4.3\n"

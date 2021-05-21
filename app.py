@@ -1,4 +1,4 @@
-from typing import List, Set, Tuple
+from typing import Dict, List, Set, Tuple
 
 
 def get_full_name(first_name: str, last_name: str):
@@ -26,3 +26,8 @@ def process_items(items: List[str]):
 
 def process_items2(items_t: Tuple[int, int, str], items_s: Set[bytes]):
     return items_t, items_s
+
+
+def process_prices(prices: Dict[str, float]):
+    for item_name, item_price in prices.items():
+        print(item_name, ":", item_price)
