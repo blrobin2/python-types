@@ -38,3 +38,12 @@ def say_hi(name: Optional[str] = None):
         print(f"Hey {name.title()}!")
     else:
         print("Hello World!")
+
+
+class Person:
+    def __init__(self, name: str) -> None:
+        self.name = name
+
+
+def get_person_name(one_person: Person) -> str:
+    return one_person.name

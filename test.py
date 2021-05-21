@@ -4,7 +4,9 @@ from app import get_full_name, \
     process_items, \
     process_items2, \
     process_prices, \
-    say_hi
+    say_hi, \
+    Person, \
+    get_person_name \
 
 
 def test_full_name():
@@ -41,3 +43,8 @@ def test_say_hi(capsys):
     say_hi()
     captured = capsys.readouterr()
     assert captured.out == "Hey Jeff!\nHello World!\n"
+
+
+def test_get_person_name():
+    person = Person(name="John")
+    assert get_person_name(person) == "John"
