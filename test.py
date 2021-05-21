@@ -1,4 +1,4 @@
-from app import get_full_name, get_name_with_age
+from app import get_full_name, get_name_with_age, get_items
 
 
 def test_full_name():
@@ -7,3 +7,7 @@ def test_full_name():
 
 def test_name_with_age():
     assert get_name_with_age('john', 8) == 'john is this old: 8'
+
+
+def test_items():
+    assert get_items('a', 1, 1.5, True, b'101') == ('a', 1, 1.5, True, b'101')
