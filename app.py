@@ -1,3 +1,6 @@
+from typing import List
+
+
 def get_full_name(first_name: str, last_name: str):
     return first_name.title() + " " + last_name.title()
 
@@ -14,3 +17,8 @@ def get_items(
     item_e: bytes
 ):
     return item_a, item_b, item_c, item_d, item_e
+
+
+def process_items(items: List[str]):
+    for item in items:
+        print(item)
