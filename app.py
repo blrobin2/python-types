@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Set, Tuple
 
 
 def get_full_name(first_name: str, last_name: str):
@@ -22,3 +22,7 @@ def get_items(
 def process_items(items: List[str]):
     for item in items:
         print(item)
+
+
+def process_items2(items_t: Tuple[int, int, str], items_s: Set[bytes]):
+    return items_t, items_s

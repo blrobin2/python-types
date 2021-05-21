@@ -1,4 +1,8 @@
-from app import get_full_name, get_name_with_age, get_items, process_items
+from app import get_full_name, \
+    get_name_with_age, \
+    get_items, \
+    process_items, \
+    process_items2
 
 
 def test_full_name():
@@ -17,3 +21,8 @@ def test_process_items(capsys):
     process_items(['list', 'of', 'words'])
     captured = capsys.readouterr()
     assert captured.out == "list\nof\nwords\n"
+
+
+def test_process_items2():
+    items = process_items2((1, 2, 'three'), {b'101', b'202'})
+    assert items == ((1, 2, 'three'), {b'101', b'202'})
